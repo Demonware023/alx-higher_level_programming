@@ -2,7 +2,7 @@
 
 if __name__ == "__main__":
     """My First Toolbox!"""
-    
+
     a = 10
     b = 5
 
