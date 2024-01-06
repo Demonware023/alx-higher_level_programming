@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 if __name__ == "__main__":
-    """\n"""
+    """My First Toolbox!"""
     a = 10
     b = 5
 
