@@ -1,4 +1,9 @@
+#!/usr/bin/python3
+"""A module that Writes a class Rectangle that defines a rectangle"""
+
+
 class Rectangle:
+    """Returns a string representation of the rectangle to be able to recreate a new instance by using eval"""
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
