@@ -2,5 +2,55 @@
 How to use the class my list
 ==========================================
 
-if not instance(MyList, int):
-    return ("Not an integer")
+This module defines a function named 'print_sorted' that takes two parameters.
+
+USAGE
+======
+
+'print_sorted(...)' prints the list, but sorted(ascending sort)
+
+#Test Case 1
+
+Creating an empty Mylist instance and printing it
+>>> my_list.print_sorted()
+[]
+
+# Test Case 2
+
+Appending elements to MyList and printing it
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+Expected Output:
+[1, 4, 2, 3, 5]
+
+# TEST CASE 3
+
+Printing the MyList after calling print_sorted method
+>>> my_list.print_sorted()
+Expected Output:
+[1, 2, 3, 4, 5]
+
+#TEST CASE 4
+
+Printing the original MyList after calling print_sorted
+The original list remains unchanged
+>>> print(my_list)
+Expected Output:
+[1, 4, 2, 3, 5]
+
+
+IF NOT INT
+============
+
+>>> my_list.print_sorted("Jordan")
+Traceback(most recent call last):
+TypeError: argument must be integers
+
+
+At least one name/string must be provided to the function.
+>>> print_sorted()
+Traceback (most recent call last):
+TypeError: print_sorted missing 1 required positional argument
