@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-""" Write a class Rectangle that inherits from \n
-    BaseGeometry (7-base_geometry.py).\n
-"""
-from 7-base_geometry import BaseGeometry
 
+from 7-base_geometry import BaseGeometry
+""" Write a class Rectangle that inherits from \n
+    BaseGeometry (7-base_geometry.py).
+"""
 
 
 class Rectangle(BaseGeometry):
