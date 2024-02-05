@@ -1,11 +1,6 @@
 #!/usr/bin/python3
 """ Write a class Rectangle that inherits from \n
     BaseGeometry (7-base_geometry.py).\n
-    Instantiation with width and height:\n
-    def __init__(self, width, height):\n
-    width and height must be private. No getter or setter\n
-    width and height must be positive integers, validated\n
-    by integer_validator
 """
 from 7-base_geometry import BaseGeometry
 
