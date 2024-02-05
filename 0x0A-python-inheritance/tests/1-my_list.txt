@@ -1,0 +1,6 @@
+==========================================
+How to use the class my list
+==========================================
+
+if not instance(MyList, int):
+    return ("Not an integer")
