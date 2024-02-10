@@ -3,6 +3,7 @@
     are given.
 """
 
+
 class Base:
     """ Defines the class base with id arguments. """
     __nb_objects = 0

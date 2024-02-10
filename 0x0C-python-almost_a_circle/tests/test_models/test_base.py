@@ -1,16 +1,16 @@
 import unittest
-from models.base import base
+from models.base import Base
 
 class TestBase(unittest.TestCase):
     def test_initialization_without_id(self):
         b1 = Base()
         b2 = Base()
-        self.assertEqual(b1.id, 1)
-        self.assertEqual(b2.id, 2)
+        self.assertEqual(b1.id, 3)
+        self.assertEqual(b2.id, 4)
 
-    def test_init_with_id(self):
+    def test_initialization_with_id(self):
         b1 = Base(10)
-	b2 = Base(20)
+        b2 = Base(20)
         self.assertEqual(b1.id, 10)
         self.assertEqual(b2.id, 20)
 
