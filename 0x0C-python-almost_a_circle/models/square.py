@@ -13,17 +13,20 @@ class Square(Rectangle):
     """ Creates a class sqare that inherits all the attributes from the\
         Rectangle class.
     """
-    def __init__(self, size, x=0, y=0, id=None):
-        """Initializes a Square instance."""
+    def __init__(self, size, x=0, y=0,id=None):
         super().__init__(size, size, x, y, id)
 
-    def __str__(self):
-        """Returns the string representation of the Square."""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+    @property
+    def size(self):
+        """Getter method for size attribute."""
+        return self.width
 
-    def display(self):
-        """Prints the square with '#' characters."""
-        for _ in range(self.y):
-            print()
-        for _ in range(self.height):
-            print(" " * self.x + "#" * self.width)
+    @size.setter
+    def size(self, value):
+        """Setter method for size attribute."""
+        self.width = value
+        self.height = value
+
+    def __str__(self):
+        """ Returns the spring reprsentaion of the square."""
+        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
