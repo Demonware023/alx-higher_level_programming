@@ -168,5 +168,18 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r.x, 4)
         self.assertEqual(r.y, 5)
 
+    def test_to_dictionary(self):
+        r = Rectangle(10, 2, 1, 9, 1)
+        expected = {'id': 1, 'width': 10, 'height': 2, 'x': 1, 'y': 9}
+        self.assertEqual(r.to_dictionary(), expected)
+
+    def test_update(self):
+        r = Rectangle(1, 1, 0, 0, 1)
+        r.update(2, 3, 4, 5, 6)
+        self.assertEqual(r.to_dictionary(), {'id': 2, 'width': 3, 'height': 4, 'x': 5, 'y': 6})
+
+        r.update(height=10, width=20, id=3, x=30, y=40)
+        self.assertEqual(r.to_dictionary(), {'id': 3, 'width': 20, 'height': 10, 'x': 30, 'y': 40})
+
 if __name__ == '__main__':
     unittest.main()
