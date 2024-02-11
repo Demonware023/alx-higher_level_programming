@@ -35,3 +35,18 @@ class Square(Rectangle):
     def __str__(self):
         """ Returns the spring reprsentaion of the square."""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+
+    def __init__(self, size, x=0, y=0):
+        super().__init__(size, size, x, y)
+
+    def to_csv(self):
+        return [self.id, self.width, self.height, self.x, self.y]
+
+    @classmethod
+    def create(cls, **kwargs):
+        """Creates a new instance of Square with the given parameters."""
+        dummy = cls(1)  # Dummy instance to set attributes
+        if 'id' in kwargs:
+            del kwargs['id']  # Remove 'id' from kwargs if present
+        dummy.update(**kwargs)
+        return dummy
