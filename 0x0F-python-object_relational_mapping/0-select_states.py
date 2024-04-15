@@ -41,4 +41,3 @@ if __name__ == "__main__":
     finally:
         if 'db' in locals():
             db.close()
-
