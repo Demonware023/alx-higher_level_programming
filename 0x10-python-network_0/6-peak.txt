@@ -1,1 +1,2 @@
+# The time complexity of this algorithm is O(log(n))
 O(log(n))
