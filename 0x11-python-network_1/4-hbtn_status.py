@@ -8,13 +8,14 @@ The body of the response must be display like the following example (tabulation 
 """
 import requests
 
-# Specify the URL to fetch
-url = "https://alx-intranet.hbtn.io/status"
+if __name__ == "__main__":
+    # Specify the URL to fetch
+    url = "https://alx-intranet.hbtn.io/status"
 
-# Send a GET request to the URL
-response = requests.get(url)
+    # Send a GET request to the URL
+    response = requests.get(url)
 
-# Print the body of the response
-print("Body response:")
-print("\t- type:", type(response.text))
-print("\t- content:", response.text)
+    # Print the body of the response
+    print("Body response:")
+    print("\t- type:", type(response.text))
+    print("\t- content:", response.text)
