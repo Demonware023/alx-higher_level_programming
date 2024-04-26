@@ -23,7 +23,12 @@ if __name__ == "__main__":
     # it’s the URL that you want to send a request to.
     try:
         with urllib.request.urlopen(url) as response:
+	    # The urlopen function from the urllib.request module is used to open the URL
+	    # The read method is used to read the response, and decode is
+	    #used to decode the response from bytes to a string using utf-8 encoding.
 	    print(response.read().decode('utf-8'))
     except urllib.error.HTTPError as error:
+        # This is the except block that catches HTTPError exceptions
+        # which are raised for non-200 HTTP codes. If an HTTPError is
+        # caught, the script prints "Error code: " followed by the HTTP status code.
         print("Error code: {}".format(error.code))
-
