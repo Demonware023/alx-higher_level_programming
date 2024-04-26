@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-A Python script that fetches the specified URL using the urllib package and displays the body of the response as required:
+A Python script that fetches the specified URL using the urllib-
+-package and displays the body of the response as required:
 """
 from urllib.request import urlopen
 
