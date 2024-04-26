@@ -8,15 +8,11 @@ If the HTTP status code is greater than or equal to 400, it prints
 import requests
 import sys
 
-# Extract the URL from command-line arguments
-url = sys.argv[1]
-
-# Send a GET request to the URL
-response = requests.get(url)
-
-# Check the status code of the response
-if response.status_code >= 400:
-    print("Error code:", response.status_code)
-else:
-    # Display the body of the response
-    print(response.text)
+if __name__ == "__main__":
+    url = sys.argv[1]
+    response = requests.get(url)
+    
+    if response.status_code >= 400:
+        print("Error code: {}".format(response.status_code))
+    else:
+        print(response.text)
