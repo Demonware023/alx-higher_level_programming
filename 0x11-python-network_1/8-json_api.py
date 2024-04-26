@@ -17,15 +17,19 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    url = "http://0.0.0.0:5000/search_user"
-    letter = sys.argv[1] if len(sys.argv) > 1 else ""
+    # Extract the letter from command-line arguments
+    q = sys.argv[1] if len(sys.argv) > 1 else ""
 
+    # Send a POST request to the URL with the letter as a parameter
+    url = "http://0.0.0.0:5000/search_user"
+    response = requests.post(url, data={'q': q})
+
+    # Parse the JSON response
     try:
-        response = requests.post(url, data={'q': letter})
-	json_response = response.json()
-	if json_response:
-	    print("[{}] {}".format(json_response.get('id'), json_response.get('name')))
-	else:
-	    print("No result")
-	except ValueError:
-	    print("Not a valide JSON")
+        json_response = response.json()
+        if json_response:
+            print("[{}] {}".format(json_response['id'], json_response['name']))
+        else:
+            print("No result")
+    except ValueError:
+        print("Not a valid JSON")
