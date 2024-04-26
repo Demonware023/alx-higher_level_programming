@@ -11,17 +11,21 @@ You don’t need to check arguments passed to the script (number or type)
 import requests
 import sys
 
-if __name__ == "__main__":
-    repo = sys.argv[1]
-    owner = sys.argv[2]
+# Extract the repository name and owner name from command-line arguments
+repo_name = sys.argv[1]
+owner_name = sys.argv[2]
 
-    url = "https://api.github.com/repos/{}/{}/commits".format(owner, repo)
-    response = requests.get(url)
+# Construct the URL for the GitHub API endpoint to list commits
+url = f"https://api.github.com/repos/{owner_name}/{repo_name}/commits"
 
-    if response.status_code >= 400:
-        print("None")
-    else:
-        commits = response.json()
-        for commit in commits[:10]:
-            print("{}: {}".format(commit.get('sha'), commit.get('commit').get('author').get('name')))
+# Send a GET request to the GitHub API endpoint
+response = requests.get(url)
 
+# Parse the JSON response
+commits = response.json()
+
+# Iterate over the 10 most recent commits and print SHA and author name
+for commit in commits[:10]:
+    sha = commit['sha']
+    author_name = commit['commit']['author']['name']
+    print(f"{sha}: {author_name}")
