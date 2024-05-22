@@ -1,4 +1,9 @@
 #!/usr/bin/node
+// Write a script that prints all characters of a Star Wars movie:
+
+// The first argument is the Movie ID - example: 3 = “Return of the Jedi”
+// Display one character name by line in the same order of the list “characters” in the /films/ response
+// You must use the Star wars API
 const request = require('request');
 
 function fetchCharacterName(characterUrl) {
@@ -6,7 +11,7 @@ function fetchCharacterName(characterUrl) {
     request(characterUrl, (error, response, body) => {
       if (error) return reject(error);
       if (response.statusCode !== 200) {
-        return reject(new Error('Failed to load character'));
+        return reject(new Error('Failed to laod character'));
       }
       const character = JSON.parse(body);
       resolve(character.name);
