@@ -6,7 +6,7 @@
 // You must use the Star wars API
 const request = require('request');
 
-function fetchCharacterName(characterUrl) {
+function fetchCharacterName (characterUrl) {
   return new Promise((resolve, reject) => {
     request(characterUrl, (error, response, body) => {
       if (error) return reject(error);
