@@ -10,11 +10,11 @@ const fs = require('fs');
 const filePath = process.argv[2]; // The first argument is the file path
 
 fs.readFile(filePath, 'utf8', (err, data) => {
-    if (err) {
-        // If an error occurred during the reading, print the error object
-        console.error(err);
-    } else {
-        // If the file is read successfully, print its content
-        console.log(data);
-    }
+  if (err) {
+    // If an error occurred during the reading, print the error object
+    console.error(err);
+  } else {
+    // If the file is read successfully, print its content
+    console.log(data);
+  }
 });
